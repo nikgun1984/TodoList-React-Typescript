@@ -1,3 +1,5 @@
+import './TodoList.css';
+
 interface TodoListProps {
 	items: {id: string, text:string}[];
 	removeTodo: (id:string)=>void;

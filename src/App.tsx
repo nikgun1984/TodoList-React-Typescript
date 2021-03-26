@@ -11,7 +11,7 @@ const App: React.FC = () => { // can also be FunctionalComponent/ClassicComponen
   }
   const toDoDeleteHandler = (todoId: string) => {
     setTodos(prevTodos=>{
-      return prevTodos.filter(todo=> todo.id===todoId)
+      return prevTodos.filter(todo=> todo.id!==todoId)
     })
   };
   return (
