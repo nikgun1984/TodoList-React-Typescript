@@ -1,4 +1,4 @@
-# Todo List with Typescript and React  
+# Todo List with Typescript, React  and Redux
 https://todolist-typescript-react.netlify.app/  
 
 ![Image description](sample.gif) 
