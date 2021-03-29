@@ -1,9 +1,15 @@
 # Todo List with Typescript and React  
-https://todolist-typescript-react.netlify.app/
+https://todolist-typescript-react.netlify.app/  
+
+![Image description](sample.gif) 
 
 Practicing with React and Typescript. I decided to reassemble my previous 
-React Todo app but with Typescript.  
+React Todo app but with Typescript. As a state(store), I utilized Redux.  
 
-![Image description](sample.gif)  
+Technologies:  
+- React  
+- Redux  
+- Typescript
+ 
 
 
