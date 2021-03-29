@@ -1,23 +1,24 @@
 import TodoList from './components/TodoList';
 import NewTodo from './components/NewTodo';
-import {useState} from "react";
-import {Todo} from './todo.models';
+import {useSelector, useDispatch} from "react-redux";
+import {Todos} from './reduce';
 const App: React.FC = () => { // can also be FunctionalComponent/ClassicComponent
   // our state with generics using interface Todo array
-  const [todos, setTodos] = useState<Todo[]>([]);
-  
-  const addTodo = (text: string) => {
-    setTodos(prevTodos=>[...prevTodos, {id: Math.random().toString(), text:text}]);
+  const todos = useSelector<Todos, Todos["todos"]>((store)=>store.todos);
+  const dispatch = useDispatch();
+
+  function addMeme(text: string) {
+    dispatch({ type: "CREATE_TODO", todo: {id: Math.random().toString(), text:text} });
   }
-  const toDoDeleteHandler = (todoId: string) => {
-    setTodos(prevTodos=>{
-      return prevTodos.filter(todo=> todo.id!==todoId)
-    })
-  };
+
+  function deleteMeme(id:string) {
+    dispatch({type: "DELETE_TODO", id });
+  }
+  
   return (
     <div className="App">
-      <NewTodo addTodo = {addTodo}/>
-      <TodoList items={todos} removeTodo={toDoDeleteHandler}/>
+      <NewTodo addTodo = {addMeme}/>
+      <TodoList items={todos} removeTodo={deleteMeme}/>
     </div>
   );
 }
